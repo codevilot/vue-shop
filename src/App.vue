@@ -1,9 +1,16 @@
-<script setup lang="ts">
-import Header from "./components/Header.vue";
+<script>
+import Headnav from "./components/Headnav.vue";
+export default {
+  components: { Headnav },
+  name: "App",
+  components: {
+    Headnav,
+  },
+};
 </script>
-
 <template>
-  <Header />
+  <Headnav> </Headnav>
+  <router-view></router-view>
 </template>
 
 <style>

@@ -1,18 +1,29 @@
 <template>
   <div class="flex items-center">
     <div>
-      <a href="/" class="text-black dark:text-white"> Vue Shop </a>
+      <router-link to="/" class="text-black dark:text-white">
+        Vue Shop
+      </router-link>
     </div>
     <ul class="flex">
       <li class="pl-5">
-        <a href="/fashion" class="text-black dark:text-white"> 패션 </a>
+        <router-link to="/fashion" class="text-black dark:text-white">
+          패션
+        </router-link>
       </li>
       <li class="pl-5">
-        <a href="/acc" class="text-black dark:text-white"> 악세서리 </a>
+        <router-link to="/acc" class="text-black dark:text-white">
+          악세서리
+        </router-link>
       </li>
       <li class="pl-5">
-        <a href="/digital" class="text-black dark:text-white"> 디지털 </a>
+        <router-link to="/digital" class="text-black dark:text-white">
+          디지털
+        </router-link>
       </li>
     </ul>
   </div>
 </template>
+<script>
+export default { name: "Category" };
+</script>
