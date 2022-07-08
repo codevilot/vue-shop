@@ -14,8 +14,8 @@ export default {
 </template>
 
 <style>
-body{
-  margin:0px;
+body {
+  margin: 0px;
 }
 ul,
 li,
