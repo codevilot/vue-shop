@@ -1,15 +1,17 @@
 <script>
-import Headnav from "./components/Headnav.vue";
+import Header from "./components/Header/Header.vue";
+import { useProductStore } from "./store/productStore";
 export default {
-  components: { Headnav },
-  name: "App",
-  components: {
-    Headnav,
+  setup() {
+    const productStore = useProductStore();
+    productStore.fetchProduct();
   },
+  components: { Header },
+  name: "App",
 };
 </script>
 <template>
-  <Headnav> </Headnav>
+  <Header></Header>
   <router-view></router-view>
 </template>
 

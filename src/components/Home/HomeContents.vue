@@ -1,14 +1,15 @@
 <template>
   <div v-for="category in categorys" :key="category">
-    <Card :items="list[category]" :category="category" />
+    <HomeCard :items="list[category].slice(0, 4)" :category="category" />
   </div>
 </template>
 
 <script>
 import { computed } from "vue";
-import Card from "./Card.vue";
-import { useProductStore } from "../store/productStore";
+import HomeCard from "./HomeCard.vue";
+import { useProductStore } from "../../store/productStore";
 export default {
+  name: "HomeContents",
   setup() {
     const productStore = useProductStore();
     return {
@@ -17,7 +18,6 @@ export default {
     };
   },
 
-  name: "Cards",
   data() {
     return {
       products: [],
@@ -25,7 +25,7 @@ export default {
     };
   },
   components: {
-    Card,
+    HomeCard,
   },
 };
 </script>

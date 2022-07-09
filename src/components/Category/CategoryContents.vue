@@ -1,14 +1,16 @@
 <template>
-  <div v-for="category in categorys" :key="category">
-    <Card :items="list[category]" :category="category" />
-  </div>
+  <CategoryCard
+    :items="list[$route.params.categoryId]"
+    :category="$route.params.categoryId"
+  />
 </template>
 
 <script>
 import { computed } from "vue";
-import Card from "./Card.vue";
-import { useProductStore } from "../store/productStore";
+import CategoryCard from "./CategoryCard.vue";
+import { useProductStore } from "../../store/productStore";
 export default {
+  name: "CategoryContents",
   setup() {
     const productStore = useProductStore();
     return {
@@ -17,7 +19,6 @@ export default {
     };
   },
 
-  name: "Cards",
   data() {
     return {
       products: [],
@@ -25,7 +26,7 @@ export default {
     };
   },
   components: {
-    Card,
+    CategoryCard,
   },
 };
 </script>
