@@ -38,7 +38,7 @@ export const useProductStore = defineStore("product", {
             (acc: typeProductReduceAcc, cur: typeProductReduceCur) => {
               return {
                 ...acc,
-                [Number(cur.id)]: [cur],
+                [Number(cur.id)]: cur,
               };
             },
             {}

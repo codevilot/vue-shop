@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center">
     <div>
-      <router-link to="/" class="text-black dark:text-white font-bold">
+      <router-link to="/" class="text-black dark:text-white font-bold ml-5">
         Vue Shop
       </router-link>
     </div>
