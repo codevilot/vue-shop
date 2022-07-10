@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
-
+import { useProductStore } from "./productStore";
+import { basketInBasketState, basketState } from "../type/type";
 export const useBasketState = defineStore("BasketState", {
-  state: () => ({
+  state: (): basketState => ({
     basket:
       (
         JSON.parse(localStorage.getItem("basket") || "{}") || {
@@ -17,12 +18,30 @@ export const useBasketState = defineStore("BasketState", {
         }
       ).all || 0,
   }),
-  getters: {},
+  getters: {
+    basketCount(): number {
+      return this.all;
+    },
+    showBasket() {
+      const basketList: basketInBasketState = this.basket;
+      const products = useProductStore().idloader;
+      const basketIdList: Array<string> = Object.keys(basketList);
+      const result = Object.keys(products)
+        .filter((key) => basketIdList.includes(key))
+        .reduce((obj, key) => {
+          return Object.assign(obj, {
+            [key]: { ...products[Number(key)], stock: basketList[Number(key)] },
+          });
+        }, {});
+      return result;
+    },
+  },
   actions: {
     add(id: number) {
       this.basket[id] = (this.basket[id] || 0) + 1;
       this.all += 1;
       localStorage.setItem("basket", JSON.stringify(this));
+      console.log(this.basket);
     },
     reduce(id: number) {
       this.basket[id] > 1
@@ -30,6 +49,7 @@ export const useBasketState = defineStore("BasketState", {
         : delete this.basket[id];
       this.all > 1 ? (this.all -= 1) : (this.all = 0);
       localStorage.setItem("basket", JSON.stringify(this));
+      console.log(this.basket);
     },
     clear() {
       this.basket = {};

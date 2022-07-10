@@ -21,11 +21,13 @@ export default {
     />
 
     <input type="text" class="h-11" />
-    <img
-      class="w-7 h-7 ml-5 mr-5 lightmode darkmode"
-      src="../../../public/icon/bag.png"
-      alt=""
-    />
+    <router-link to="/cart">
+      <img
+        class="w-7 h-7 ml-5 mr-5 lightmode darkmode"
+        src="../../../public/icon/bag.png"
+        alt=""
+      />
+    </router-link>
   </div>
 </template>
 <style>

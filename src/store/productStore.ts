@@ -16,6 +16,7 @@ export const useProductStore = defineStore("product", {
     productList(): typeProductReduceAcc {
       return this.products;
     },
+
     categoryList(): Array<string> {
       return this.category;
     },
