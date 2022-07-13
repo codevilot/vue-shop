@@ -25,6 +25,9 @@ module.exports = {
       gridAutoColumns: {
         "1fr": "minmax(320px,1fr)",
       },
+      spacing: {
+        '128': '50vw',
+      }
     },
   },
 };

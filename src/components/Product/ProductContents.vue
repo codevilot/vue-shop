@@ -1,8 +1,8 @@
 <template>
   <div v-if="data[id]">
-    <div class="flex items-center">
-      <div class="view_image p-4 bg-white min-w-1/4 rounded-lg h-fit">
-        <img :src="data[id].image" class="h-72 w-full" />
+    <div class="lg:flex items-center">
+      <div class="view_image m-5 lg:m-0 p-4 bg-white min-w-1/4 rounded-lg h-fit bg-contain bg-no-repeat bg-center lg:h-72 h-[50vw]" :style="{ backgroundImage: 'url(' + data[id].image + ')' }">
+  
       </div>
       <div class="p-8 dark:text-white text-black">
         <div class="text-3xl">{{ data[id].title }}</div>

@@ -16,4 +16,9 @@ export default {
   },
   name: "Header",
 };
+
 </script>
+<style>
+.dark .darkmode {
+  filter: invert(100%);
+}</style>

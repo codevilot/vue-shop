@@ -1,6 +1,6 @@
 <template>
   <div class="flex mb-20">
-    <div class="h-56 w-56 bg-white">
+    <div class="h-56 w-56 bg-white flex">
       <img
         class="max-h-full max-w-full box-border m-auto p-5"
         :src="image"
