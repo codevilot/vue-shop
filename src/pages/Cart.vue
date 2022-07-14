@@ -22,9 +22,9 @@
         :image="element.image"
       />
     </div>
-    <div class="flex place-content-end">
-      <div class="self-center w-fit rounded-lg mr-5 text-white">
-        {{
+    <div class="flex place-content-end pb-10">
+      <div class="self-center w-fit rounded-lg mr-5 dark:text-white text:black text-xl">
+       총 ${{
           Object.entries(showBasket).reduce(
             (acc, [key, value]) =>
               acc + Number(value.price) * Number(value.stock),
@@ -34,7 +34,7 @@
       </div>
       <label
         htmlFor="my-modal"
-        class="btn btn-primary modal-button dark:text-white text-black"
+        class="bg-indigo-600 p-4 rounded-lg text-white"
       >
         구매하기
       </label>

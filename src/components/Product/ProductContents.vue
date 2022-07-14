@@ -8,8 +8,15 @@
         <div class="text-3xl">{{ data[id].title }}</div>
         <div class="text-xl">{{ data[id].description }}</div>
         <div class="flex pt-5">
-          <div>⭐⭐⭐⭐⭐</div>
-          <!-- <Rating rate="{data.score}">⭐⭐⭐⭐⭐</Rating> -->
+          <div class="score" 
+          :style="
+          {background:'-webkit-linear-gradient(180deg, gray '+(100-data[id].rating.rate*20)+'%, yellow 1%)',
+            width:'fit-content',
+            '-webkit-text-fill-color':'transparent',
+            '-webkit-background-clip':'text'
+          }"
+         >⭐⭐⭐⭐⭐</div> 
+          
           <div class="pl-3 text-xl">{{ data[id].rating.rate }}</div>
           <div class="pl-3 text-xl">{{ data[id].rating.count }}참여</div>
         </div>

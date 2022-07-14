@@ -1,23 +1,23 @@
 <template>
-  <div class="flex mb-20">
-    <div class="h-56 w-56 bg-white flex">
+  <div class="lg:flex block lg:mt-20 mt-10">
+    <div class="lg:h-56 lg:w-56 w-screen m-auto h-[75vw] w-[75vw] bg-white flex rounded-lg">
       <img
         class="max-h-full max-w-full box-border m-auto p-5"
         :src="image"
         alt=""
       />
     </div>
-    <div class="h-56 flex flex-col place-content-center lg:px-12">
-      <div class="text-white text-xl">{{ title }}</div>
-      <div class="text-white text-3xl mt-2 mb-4">
+    <div class="h-56 flex flex-col place-content-center lg:px-12 dark:text-white text-black lg:w-5/6">
+      <div class="text-xl">{{ title }}</div>
+      <div class="text-3xl mt-2 mb-4">
         $<span>{{ price * stock }}</span>
       </div>
-      <div class="text-white flex">
-        <div class="bg-indigo-600 p-4 rounded-lg" @click="reduceCart(id)">
+      <div class="flex">
+        <div class="bg-indigo-600 p-4 rounded-lg text-white" @click="reduceCart(id)">
           -
         </div>
-        <div class="p-4">{{ stock }}</div>
-        <div class="bg-indigo-600 p-4 rounded-lg" @click="addCart(id)">+</div>
+        <div class="p-4 dark:text-white; text-black;">{{ stock }}</div>
+        <div class="bg-indigo-600 p-4 rounded-lg text-white" @click="addCart(id)">+</div>
       </div>
     </div>
   </div>

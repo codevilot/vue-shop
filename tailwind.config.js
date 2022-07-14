@@ -19,8 +19,12 @@ module.exports = {
         "1/4": "20rem",
         540: "32rem",
       },
+      width: {
+        75: "75vw"
+      },
       height: {
         128: "35rem",
+        75: "75vw",
       },
       gridAutoColumns: {
         "1fr": "minmax(320px,1fr)",

@@ -1,6 +1,6 @@
 <template>
-  <div class="dark:bg-black bg-white h-12 p-2">
-    <div class="flex justify-between max-w-7xl m-auto">
+  <div class="dark:bg-black bg-white h-fit fixed w-full pt-2 pb-2 z-10">
+    <div class="flex justify-between max-w-7xl m-auto px-3">
       <CategoryLink />
       <Controlbar />
     </div>
